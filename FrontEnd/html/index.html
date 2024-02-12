@@ -39,9 +39,9 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<div>
+		<div class="portofolio-title">
 			<h2>Mes Projets</h2>
-			<a href="#edit-project" class="open-modal"><i class="fa-solid fa-pen-to-square"></i>modifier</a>
+			<a href="#edit-project" class="open-modal" id="edit-mode-btn"><i class="fa-solid fa-pen-to-square"></i>modifier</a>
 		</div>
 		<div class="filters" id="filters">
 			<input type="button" class="filters-btn" id="displayAll" value="Tout">
@@ -63,36 +63,51 @@
 		</form>
 	</section>
 </main>
-<section id="login">
-	<form id="login-form">
-		<h2>Log In</h2>
-		<label>E-mail</label>
-		<input type="search" id="login-email">
-		<label>Mot de passe</label>
-		<input type="search" id="login-password">
-		<div class="login-end">
-			<div id="loginFormMessage"></div>
-			<button id="login-form-submit-button" class="search-btn">Se connecter</button>
-			<a>Mot de passe oublié</a>
-		</div>
-	</form>
-</section>
 <section id="edit">
 	<aside id="edit-project" class="edit-content" aria-hidden="true" >
-		<div class="edit-project-content">
-			<div class="close-modal">
-				<button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+		<div id="edit-project-content">
+			<div class="edit-project-gallery">
+				<div class="close-modal">
+					<button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+				</div>
+				<h3 class="modal-title">Galerie photo</h3>
+				<div id="edit-gallery" class="edit-gallery">
+				</div>
+				<div class="add-project-btn">
+					<button id="modal-btn">Ajouter une photo</button>
+				</div>
 			</div>
-			<h3 class="modal-title">Galerie photo</h3>
-			<div id="edit-gallery" class="edit-gallery">
-
+			<div id="add-picture-form">
+				<div class="modal-corner-btn">
+					<div class="back-to-edit">
+						<button><i class="fa-solid fa-arrow-left"></i></button>
+					</div>
+					<div class="close-modal">
+						<button><i class="fa-solid fa-xmark"></i></button>
+					</div>
+				</div>
+				<h3 class="modal-title">Ajout photo</h3>
+				<form id="picture-upload-form">
+					<div id="add-picture">
+						<div id="filePreview"></div>
+						<i class="fa-regular fa-image fa-2xl hide-add-picture"></i>
+						<div class="parent-div">
+							<button class="btn-upload" id="picture-file-button">+ Ajouter photo</button>
+							<input type="file" name="upfile" id='picture-file-input' class="add-picture-input" required/>
+						</div>
+						<p class="hide-add-picture">jpg.png : 4mo max</p>
+					</div>
+					<label>Titre</label>
+					<input type="text" id="picture-text-input" required>
+					<label for="chose-category">Catégorie</label>
+					<select name="chose-category" id="chose-category" required>
+						<option value="chose">Choisir une catégorie</option>
+					</select>
+					<div class="div-validate-btn">
+						<button id="validate-add-picture">Valider</button>
+					</div>
+				</form>
 			</div>
-			<div class="add-project-btn">
-				<button class="modal-btn">Ajouter une photo</button>
-			</div>
-		</div>
-		<div>
-
 		</div>
 	</aside>
 </section>
@@ -106,5 +121,6 @@
 <script src="../assets/js/projets.js"></script>
 <script src="../assets/js/login.js"></script>
 <script src="../assets/js/edit-mode.js"></script>
+<script src="../assets/js/form-upload.js"></script>
 </body>
 </html>
