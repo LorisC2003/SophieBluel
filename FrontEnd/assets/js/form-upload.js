@@ -3,9 +3,7 @@ let fileInput = document.getElementById('picture-file-input');
 
 fileInput.addEventListener('change', function(event) {
     const fileInput = event.target;
-
     const file = fileInput.files[0];
-
     displayFilePreview(file);
 })
 
@@ -63,7 +61,6 @@ function checkIfAllFieldsAreFilled() {
 
 function sendPicture(event) {
     event.preventDefault();
-
     const formData = new FormData();
     formData.append('image', imageInput.files[0]);
     formData.append('title', titleInput.value);
@@ -85,7 +82,6 @@ function sendPicture(event) {
             console.error('Error:', error);
 
         });
-
 }
 
 function refreshGallery() {

@@ -1,8 +1,14 @@
+// Const for login system //
+
 const loginFormEmail = document.querySelector('#login-email');
 const loginFormPassword = document.querySelector('#login-password');
 const loginFormSubmitButton = document.querySelector('#login-form-submit-button');
 const loginFormMessage = document.querySelector('#loginFormMessage');
+const editMode = document.querySelector('#edit-mode');
+const editModeBtn = document.querySelector('#edit-mode-btn');
+const loginButton = document.querySelector('#login-button');
 
+// Login system //
 
 if(loginFormSubmitButton) {
     loginFormSubmitButton.addEventListener('click', function (event) {
@@ -48,12 +54,9 @@ if(loginFormSubmitButton) {
     })
 }
 
-const editMode = document.querySelector('#edit-mode');
-const editModeBtn = document.querySelector('#edit-mode-btn');
+// Link between home/login page //
 
-const loginButton = document.querySelector('#login-button');
 loginButton.addEventListener('click', () => toggleLoginContent('login'));
-
 
 function toggleLoginContent(toDisplay) {
     if (toDisplay === 'login') {
@@ -61,5 +64,5 @@ function toggleLoginContent(toDisplay) {
         return;
     }
     window.location.href = 'index.html';
-
 }
+

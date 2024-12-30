@@ -97,6 +97,7 @@ nav li {
 
 li:hover {
 	color: #B1663C;
+	cursor: pointer;
 }
 
 #edit-mode {
@@ -105,6 +106,16 @@ li:hover {
 	padding-bottom: 10px;
 	background-color: black;
 	color: white;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:hover, a:visited, a:active {
+	text-decoration: none;
+	color: inherit;
 }
 
 #edit-mode i {
@@ -163,7 +174,7 @@ li:hover {
 }
 
 .filters-btn {
-	padding: 8px 12px 8px 12px;
+	padding: 8px 12px;
 	margin-right: 2px;
 	margin-left: 2px;
 	background-color: white;
@@ -171,9 +182,12 @@ li:hover {
 	border: solid 1px #1D6154;
 	font-family: 'Syne';
 	border-radius: 25px;
+	cursor: pointer;
+	transition: background-color 0.3s, color 0.3s;
 }
 
-.filters-btn:focus {
+.filters-btn:focus,
+.filters-btn.active {
 	background-color: #1D6154;
 	color: white;
 }
