@@ -37,14 +37,11 @@ function CreateCategoryButton(category) {
     categoryCount++;
 
     filterButton.addEventListener('click', function () {
-        // Retirer la classe active de tous les boutons
         const allButtons = document.querySelectorAll('.filters-btn');
         allButtons.forEach(button => button.classList.remove('active'));
 
-        // Ajouter la classe active au bouton cliqué
         filterButton.classList.add('active');
 
-        // Afficher les figures correspondant à la catégorie
         hideCategories();
         displayCategory(category.id);
     });
@@ -52,14 +49,11 @@ function CreateCategoryButton(category) {
 
 const Tout = document.querySelector('#displayAll');
 Tout.addEventListener('click', function () {
-    // Retirer la classe active de tous les boutons
     const allButtons = document.querySelectorAll('.filters-btn');
     allButtons.forEach(button => button.classList.remove('active'));
 
-    // Ajouter la classe active au bouton "Tout"
     Tout.classList.add('active');
 
-    // Afficher toutes les figures
     for (let i = 1; i <= categoryCount; i++) {
         displayCategory(i);
     }

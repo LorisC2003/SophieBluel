@@ -36,6 +36,7 @@ if(loginFormSubmitButton) {
             })
             .then(response => {
                 if (response.ok) {
+                    // editMode.style.display = 'block';
                     return response.json();
                 } else if (response.status === 401) {
                     loginFormMessage.style.display = 'block';
@@ -47,22 +48,10 @@ if(loginFormSubmitButton) {
             })
             .then(function (data) {
                 localStorage.setItem('token', data.token);
-                toggleLoginContent('content');
+                window.location.href = 'index.html';
             })
             .catch(error => console.error('Error fetching data:', error));
 
     })
-}
-
-// Link between home/login page //
-
-loginButton.addEventListener('click', () => toggleLoginContent('login'));
-
-function toggleLoginContent(toDisplay) {
-    if (toDisplay === 'login') {
-        window.location.href = 'login.html';
-        return;
-    }
-    window.location.href = 'index.html';
 }
 
